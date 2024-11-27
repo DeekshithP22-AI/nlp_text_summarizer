@@ -25,6 +25,7 @@ class DataTransformation:
             'labels': target_encodings['input_ids']
         }
     
+    
 
     def convert(self):
         dataset_samsum = load_from_disk(self.config.data_path)

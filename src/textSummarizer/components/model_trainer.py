@@ -15,13 +15,16 @@ class ModelTrainer:
     
     def train(self):
         device = "cuda" if torch.cuda.is_available() else "cpu"
+        print(device)
         tokenizer = AutoTokenizer.from_pretrained(self.config.model_ckpt)
+        print("tokenizer initiated")
         model_pegasus = AutoModelForSeq2SeqLM.from_pretrained(self.config.model_ckpt).to(device)
+        print(model_pegasus)
         seq2seq_data_collator = DataCollatorForSeq2Seq(tokenizer, model=model_pegasus)
         
         #loading data 
         dataset_samsum_pt = load_from_disk(self.config.data_path)
-
+        print("dataset loaded")
         # trainer_args = TrainingArguments(
         #     output_dir=self.config.root_dir, num_train_epochs=self.config.num_train_epochs, warmup_steps=self.config.warmup_steps,
         #     per_device_train_batch_size=self.config.per_device_train_batch_size, per_device_eval_batch_size=self.config.per_device_train_batch_size,
