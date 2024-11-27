@@ -1,3 +1,6 @@
+# the custom return types if we need in our project can be defined here
+
+
 from dataclasses import dataclass
 from pathlib import Path
 

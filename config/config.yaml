@@ -1,9 +1,11 @@
+#any paths, urls' we nned in our project can be defined here and use it later
+
 artifacts_root: artifacts
 
 
 data_ingestion:
   root_dir: artifacts/data_ingestion
-  source_URL: https://github.com/entbappy/Branching-tutorial/raw/master/summarizer-data.zip
+  source_URL: https://github.com/DeekshithP22-AI/project-datasets/raw/refs/heads/main/summarizer-data.zip
   local_data_file: artifacts/data_ingestion/data.zip
   unzip_dir: artifacts/data_ingestion
 
